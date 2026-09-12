@@ -193,7 +193,7 @@ raw_text = "The 5 fast runner's were running quickly in NEW YORK city! Check out
 
 # 1. Regex Normalization
 text_clean = raw_text.lower()
-text_clean = re.sub(r'https?://\S+|www\.\S+', '', text_clean) # Remove URLs
+text_clean = re.sub(r'https?://\\S+|www\.\\S+', '', text_clean) # Remove URLs
 text_clean = re.sub(r'[^\w\s]', '', text_clean)               # Remove Punctuation
 
 # 2. Tokenization
@@ -463,7 +463,7 @@ elif selected_level == "🏷️ Level 3: Classical ML & POS/NER":
     
     with tab1:
         st.header("1. Multinomial Naive Bayes Sentiment Classifier")
-        st.markdown("""
+        st.markdown(r"""
         ### 📖 Theory & Bayes Theorem
         Naive Bayes relies on Bayes' Theorem to calculate the posterior probability of a category $y$ (e.g., *Positive* vs. *Negative*) given a set of input feature words $x_1, x_2, \dots, x_n$.
         It makes a strong ("naive") assumption that all word features are conditionally independent given the class label.
