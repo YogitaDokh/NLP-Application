@@ -22,6 +22,18 @@ import torch.nn.functional as F
 # SpaCy & DisplaCy
 import spacy
 from spacy import displacy
+import os
+import nltk
+
+# Set a private user directory for NLTK data to silence permission warnings
+nltk_dir = os.path.expanduser('~/nltk_data')
+os.makedirs(nltk_dir, exist_ok=True)
+nltk.data.path.append(nltk_dir)
+
+# Now perform NLTK downloads cleanly
+nltk.download('stopwords', download_dir=nltk_dir, quiet=True)
+nltk.download('wordnet', download_dir=nltk_dir, quiet=True)
+nltk.download('punkt', download_dir=nltk_dir, quiet=True)
 
 # -----------------------------------------------------------------------------
 # NLTK RESOURCE DOWNLOADS
@@ -181,7 +193,7 @@ raw_text = "The 5 fast runner's were running quickly in NEW YORK city! Check out
 
 # 1. Regex Normalization
 text_clean = raw_text.lower()
-text_clean = re.sub(r'https?://\S+|www\.\S+', '', text_clean)  # Remove URLs
+text_clean = re.sub(r'https?://\S+|www\.\S+', '', text_clean) # Remove URLs
 text_clean = re.sub(r'[^\w\s]', '', text_clean)               # Remove Punctuation
 
 # 2. Tokenization
@@ -406,7 +418,7 @@ elif selected_level == "📐 Level 2: Embeddings & Cosine Distance":
     
     col_metric1, col_metric2 = st.columns(2)
     with col_metric1:
-        st.markdown(f"### Cosine Similarity ($\cos \\theta$): `{sim_score:.4f}`")
+        st.markdown(f"### Cosine Similarity ($\\cos \\theta$): `{sim_score:.4f}`")
         st.progress(max(0.0, float(sim_score)))
     with col_metric2:
         st.markdown(f"### Euclidean Distance ($d$): `{euclidean_dist:.4f}`")
