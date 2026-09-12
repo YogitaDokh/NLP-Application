@@ -194,7 +194,7 @@ raw_text = "The 5 fast runner's were running quickly in NEW YORK city! Check out
 # 1. Regex Normalization
 text_clean = raw_text.lower()
 text_clean = re.sub(r'https?://\\S+|www\\.\\S+', '', text_clean) # Remove URLs
-text_clean = re.sub(r'[^\w\s]', '', text_clean)               # Remove Punctuation
+text_clean = re.sub(r'[^\\w\\s]', '', text_clean)               # Remove Punctuation
 
 # 2. Tokenization
 tokens = word_tokenize(text_clean)
