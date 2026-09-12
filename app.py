@@ -33,7 +33,7 @@ nltk.data.path.append(nltk_data_dir)
 # 2. Automatically download required NLTK resources if not present
 @st.cache_resource
 def download_nltk_resources():
-    resources = ['punkt', 'punkt_tab', 'stopwords', 'wordnet']
+    resources = ['punkt', 'punkt_tab', 'stopwords', 'wordnet', 'averaged_perceptron_tagger','averaged_perceptron_tagger_eng']
     for resource in resources:
         try:
             nltk.download(resource, download_dir=nltk_data_dir, quiet=True)
