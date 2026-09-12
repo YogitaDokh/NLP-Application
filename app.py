@@ -25,6 +25,23 @@ from spacy import displacy
 import os
 import nltk
 
+# 1. Define a local directory for NLTK data to avoid permission issues
+nltk_data_dir = os.path.expanduser('~/nltk_data')
+os.makedirs(nltk_data_dir, exist_ok=True)
+nltk.data.path.append(nltk_data_dir)
+
+# 2. Automatically download required NLTK resources if not present
+@st.cache_resource
+def download_nltk_resources():
+    resources = ['punkt', 'punkt_tab', 'stopwords', 'wordnet']
+    for resource in resources:
+        try:
+            nltk.download(resource, download_dir=nltk_data_dir, quiet=True)
+        except Exception as e:
+            pass
+
+download_nltk_resources()
+
 # Set a private user directory for NLTK data to silence permission warnings
 nltk_dir = os.path.expanduser('~/nltk_data')
 os.makedirs(nltk_dir, exist_ok=True)
