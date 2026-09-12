@@ -121,7 +121,7 @@ if selected_level == "🏡 Course Overview":
 # =============================================================================
 # LEVEL 0: TEXT PREPROCESSING
 # =============================================================================
-elif selected_level == "🔤 Level 0: Text Preprocessing":
+elif selected_level == "🔤 Text Preprocessing":
     st.title("🔤 Level 0: Text Preprocessing Visualizer")
     st.markdown("Before feeding text to machine learning models, raw strings must be standardized, stripped of noise, and broken down into canonical vocabulary tokens.")
 
@@ -253,7 +253,7 @@ for word in words:
 # =============================================================================
 # LEVEL 1: VECTORIZATION
 # =============================================================================
-elif selected_level == "📊 Level 1: Vectorization (BoW & TF-IDF)":
+elif selected_level == "📊 Vectorization (BoW & TF-IDF)":
     st.title("📊 Level 1: Classical Vectorization Visualizer")
     st.markdown("Machine learning algorithms operate on numerical vectors, not raw strings. Vectorization maps text into structured numeric matrices.")
 
@@ -359,7 +359,7 @@ print(df.round(3))
 # =============================================================================
 # LEVEL 2: EMBEDDINGS
 # =============================================================================
-elif selected_level == "📐 Level 2: Embeddings & Cosine Distance":
+elif selected_level == "📐 Embeddings & Cosine Distance":
     st.title("📐 Level 2: Dense Embeddings & Vector Space Math")
     st.markdown("Classical vectors (BoW/TF-IDF) suffer from high dimensionality and sparsity, and they fail to capture semantic relationships. **Dense Word Embeddings** map words into low-dimensional continuous space where spatial proximity reflects semantic similarity.")
 
@@ -451,7 +451,7 @@ print("Cosine Similarity:", similarity.item())
 # =============================================================================
 # LEVEL 3: CLASSICAL ML & POS/NER
 # =============================================================================
-elif selected_level == "🏷️ Level 3: Classical ML & POS/NER":
+elif selected_level == "🏷️ Classical ML & POS/NER":
     st.title("🏷️ Level 3: Classical ML & Linguistic Tagging")
     st.markdown("Supervised statistical machine learning models combine vocabulary features with probabilistic models to classify text and extract linguistic structure.")
     
@@ -645,7 +645,7 @@ for ent in doc.ents:
 # =============================================================================
 # LEVEL 4: RNNS, LSTMS & ATTENTION
 # =============================================================================
-if selected_level == "🔄 Level 4: RNNs, LSTMs & Attention":
+if selected_level == "🔄 RNNs, LSTMs & Attention":
     st.title("🔄 Level 4: Deep Learning for Sequences & Attention")
     st.markdown("""
     Unlike classical ML models that treat inputs independently, sequential deep learning models process ordered text or time-series data by maintaining 
@@ -890,7 +890,7 @@ print("Attention Alignment Weights (Rows sum to 1.0):\n", attention_weights.deta
 # =============================================================================
 # LEVEL 5: TRANSFORMERS & GENAI
 # =============================================================================
-elif selected_level == "⚡ Level 5: Transformers & GenAI":
+elif selected_level == "⚡ Transformers & GenAI":
     st.title("⚡ Level 5: Modern Transformers & Generative LLMs")
     st.markdown("""
     Transformers replaced step-by-step recurrence with **Self-Attention**. By processing all sequence tokens concurrently in parallel, 
